@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h1>Addition of two numbers</h1>
+        <div>
+            <label for="first">Enter First number</label>
+            <input type="number" id="first">
+        </div>
+         <div>
+            <label for="second">Enter Second number</label>
+            <input type="number" id="second" >
+        </div>
+        <button id="add">Addition</button>
+        <button >Clear</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+      let numOneInput = document.getElementById("first");
+      let numTwoInput = document.getElementById("second");
+      let btnAddition = document.getElementById("add");
+      let result = document.getElementById("result");
+
+      btnAddition.addEventListener("mouseover",function(){
+        let n1 = parseInt(numOneInput.value);
+        let n2 = parseInt(numTwoInput.value);
+        let s = n1 + n2 ;
+        result.innerHTML = s;
+      });
+
+
+
+    </script>
+    
+</body>
+</html>

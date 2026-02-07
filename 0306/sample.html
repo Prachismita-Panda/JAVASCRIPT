@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Addition of two numbers</h1>
+    <div>
+        <label>Enter first number</label>
+        <input type="text" id="first" name="first">
+    </div>
+     <div>
+        <label>Enter second number</label>
+        <input type="text" id="second" name="second">
+    </div>
+    <button onclick="addition()">Addition</button>
+    <p id="result"></p>
+
+    <script>
+        function addition(){
+            var num1 =document.getElementsById("first").innerHTML;
+            console.log(num1);
+            var num2 = document.getElementsById("second").innerHTML;
+            console.log(num2);
+            var s = num1 + num2;
+            document.getElementsById("result").innerHTML ="Sum is" +s;
+
+        }
+    </script>
+</body>
+</html>

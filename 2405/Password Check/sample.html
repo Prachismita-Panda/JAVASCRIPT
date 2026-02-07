@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <label for="pass">Enter your Password</label>
+    <input type="text" id="pass">
+    <p id="display"></p>
+    <p id="displaym"></p>
+    <button onclick="checkPassword()">Submit</button>
+
+
+    <script>
+        function checkPassword(){
+            var pass=document.getElementById("pass").value;
+            var len=pass.length;
+            if(len==6){
+                numletter(pass,len);
+                document.getElementById("display").innerHTML="Password is weak";
+                document.getElementById("display").style.color="white";
+                document.getElementById("display").style.backgroundColor="Orange";
+            }else if(len>6 && len<12){
+                numletter(pass,len);
+                document.getElementById("display").innerHTML="Password is good";
+                document.getElementById("display").style.color="white";
+                document.getElementById("display").style.backgroundColor="green";
+            }else if(len==12){
+                numletter(pass,len);
+                document.getElementById("display").innerHTML="Password is Strong";
+                document.getElementById("display").style.color="white";
+                document.getElementById("display").style.backgroundColor="green";
+            }else if(len<6){
+                document.getElementById("display").innerHTML="Length Cannot be less than 6";
+                document.getElementById("display").style.color="red";
+                document.getElementById("display").style.backgroundColor="white";
+                document.getElementById("displaym")="";
+            }else{
+                document.getElementById("display").style.color="red";
+                document.getElementById("display").style.backgroundColor="white";
+                document.getElementById("display").innerHTML="Length Cannot exceed more than 12";
+            }
+        }
+        function numletter(pass,len) {
+            var noc=0;
+            var non=0;
+            for(var i=0;i<len;i++){
+                c=pass[i];
+                if(c>0 && c<9){
+                    non++;
+                }else{
+                    noc++;
+                }
+            }
+            if(non==0){
+                document.getElementById("displaym").style.color="red";
+                document.getElementById("displaym").style.backgroundColor="white";
+                document.getElementById("displaym").innerHTML="Must use one number";
+            }else if(pass[0]>0 && pass[0]<9){
+                document.getElementById("displaym").style.color="red";
+                document.getElementById("displaym").style.backgroundColor="white";
+                document.getElementById("displaym").innerHTML="First character cannot be a number ";
+            }
+        }
+        
+    </script>
+
+</body>
+</html>

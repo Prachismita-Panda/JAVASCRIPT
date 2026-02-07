@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form ></form>
+    <div>
+        <label for="name" > Enter your name</label>
+        <input type="text" id="name"/>
+    </div>
+
+    <p id="display"></p>
+    <p id="displaycount"></p> 
+    <p id="vowel"></p>
+    <p id="consonant"></p>
+    <p id="wsapce"></p>
+
+    <div>
+        <button onclick="display()">display</button>
+        <button onclick="clr()">clear</button>
+        <button onclick="count()">Number of characters</button>
+    </div><br/>
+    <div>
+        <button onclick="wspacecount()">Number of characters excluding space</button>
+        <button onclick="vowel()">Number of vowel</button>
+        <button onclick="consonant()">Number of consonant</button>
+    </div>
+    
+
+    <script>
+        function display(){
+            var name = document.getElementById("name").value;
+            console.log(name);
+            document.getElementById("display").innerHTML = name;
+        }
+
+        function clr(){
+            document.getElementById("name").value ="";
+            document.getElementById("display").innerHTML = '';
+            
+        }
+
+        function count(){
+            var name = document.getElementById("name").value;
+            var name = document.getElementById("displaycount").innerHTML= name.length  ;
+            
+        }
+
+        function vowel(){
+           var name = document.getElementById("name").value;
+           var c = 0;
+           for(var i=0; i<=name.length; i++){
+                if(name[i] =='a' || name[i]=='e' || name[i]=='i' || name[i]=='o' || name[i]=='u'|| name[i]=='A' || name[i]=='E' || name[i]=='I' || name[i]=='O' || name[i]=='U'){
+                    c++;
+                    document.getElementById("vowel").innerHTML = c ;
+                }
+           }
+        }
+
+        function consonant(){
+            var name = document.getElementById("name").value;
+            var c = 0;
+            for(var i=0; i<=name.length; i++){
+                if( name[i] =='b' || name[i]=='c' || name[i]=='d' || name[i]=='f' || name[i]=='g'|| name[i]=='h' ||  name[i]=='j' || name[i]=='k' || name[i]=='l'|| name[i] =='m' || name[i]=='n'  || name[i]=='p' || name[i]=='q'|| name[i]=='r' || name[i]=='s' || name[i]=='t' || name[i]=='v' || name[i]=='x'|| name[i]=='y' || [i]=='z' || name[i] =='B' || name[i]=='C' || name[i]=='D' || name[i]=='F' || name[i]=='G'|| name[i]=='H' ||  name[i]=='J' || name[i]=='K' || name[i]=='L'|| name[i] =='M' || name[i]=='N'  || name[i]=='P' || name[i]=='Q'|| name[i]=='R' || name[i]=='S' || name[i]=='T' || name[i]=='V' || name[i]=='X'|| name[i]=='Y' || [i]=='Z'){
+                    c++;
+                    document.getElementById("consonant").innerHTML = c ;
+                }
+           }
+        }
+
+        function wspacecount(){
+            var name = document.getElementById("name").value;
+            var c=0;
+            for(var i=0; i<=name.length; i++){
+                if(name[i] =='a' || name[i] =='b' || name[i]=='c' || name[i]=='d' ||name[i] =='e' || name[i]=='f' || name[i]=='g'|| name[i]=='h' || name[i] =='i' || name[i]=='j' || name[i]=='k' || name[i]=='l'|| name[i] =='m' || name[i]=='n'  ||name[i] =='o' || name[i]=='p' || name[i]=='q'|| name[i]=='r' || name[i]=='s' || name[i]=='t' || name[i] =='u' ||name[i]=='v' || name[i]=='w' || name[i]=='x'|| name[i]=='y' || [i]=='z' || name[i] =='A' ||name[i] =='B' || name[i]=='C' || name[i]=='D' || name[i] =='E' ||name[i]=='F' || name[i]=='G'|| name[i]=='H' || name[i] =='I' || name[i]=='J' || name[i]=='K' || name[i]=='L'|| name[i] =='M' || name[i]=='N'  || name[i] =='O' ||name[i]=='P' || name[i]=='Q'|| name[i]=='R' || name[i]=='S' || name[i]=='T' || name[i] =='U ' ||name[i]=='V'||name[i]=='W' || name[i]=='X'|| name[i]=='Y' || [i]=='Z') 
+                {
+                    c++;
+                    document.getElementById("wspace").innerHTML = c ;
+                }
+           }
+            
+        }
+    </script>
+</body>
+</html>
